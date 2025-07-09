@@ -212,7 +212,6 @@ h6 {
 .title-medium {
   font-size: clamp(20px, 2.08vw, 40px);
   line-height: 1.3;
-  color: var(--color-light);
 }
 
 .backdrop-title {
@@ -575,4 +574,57 @@ h6 {
   @media (max-width: 768px) {
     max-width: 60%;
   }
+}
+
+/* ----------TRAINING-TYPES---------- */
+
+.training-types {
+  position: relative;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-top: 70px;
+  padding-bottom: 120px;
+  background-color: var(--color-dark);
+}
+
+.training-types-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 60px;
+
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+.training-types-item {
+  --itemBgIconSize: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  padding-top: var(--itemBgIconSize);
+  background: url('./icons/transparent-arrow-botom-left.svg') 100% 0 /
+    var(--itemBgIconSize) no-repeat;
+
+  @media (max-width: 768px) {
+    --itemBgIconSize: 50px;
+    row-gap: 10px;
+  }
+}
+
+.training-types-image {
+  @media (max-width: 768px) {
+    max-width: 120px;
+  }
+}
+
+.training-types-iten-title {
+  font-size: 16px;
 }
