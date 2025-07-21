@@ -335,8 +335,14 @@ h6 {
   color: var(--color-light-gray);
 }
 
+select.input:invalid {
+  color: var(--color-light-gray);
+}
+
 .input:hover::placeholder,
-.input:focus::placeholder {
+.input:focus::placeholder,
+select.input:invalid:hover,
+select.input:invalid:focus {
   color: var(--color-dark);
 }
 
@@ -345,6 +351,18 @@ h6 {
   color: var(--color-dark);
   background-color: var(--color-light-gray);
   border-color: var(--color-light);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 /* ----------HEADER---------- */
@@ -874,16 +892,6 @@ h6 {
   }
 }
 
-.family-title {
-}
-.title-big {
-}
-.backdrop-title {
-}
-.centered {
-}
-.family-description {
-}
 .family-body {
   display: flex;
   align-items: center;
@@ -906,5 +914,187 @@ h6 {
 
   @media (max-width: 768px) {
     height: 180px;
+  }
+}
+
+/* ----------CALCULATE---------- */
+
+.calculate {
+  padding-block: 150px;
+  background-color: var(--color-dark-alternate);
+
+  @media (max-width: 1024px) {
+    padding-block: 100px;
+  }
+
+  @media (max-width: 768px) {
+    padding-block: 60px;
+  }
+}
+
+.calculate-inner {
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+
+  @media (max-width: 1024px) {
+    column-gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+
+.calculate-body {
+  flex-grow: 1;
+  max-width: 627px;
+  /* padding-left: 35px; */
+}
+.calculate-title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.calculate-description {
+  max-width: 385px;
+}
+
+.calculate-description:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.calculate-form {
+}
+
+.calculate-form-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calculate-form-body:not(:last-child) {
+  margin-bottom: 26px;
+}
+
+.calculate-input {
+}
+
+.calculate-input.wide {
+  grid-column: -1/1;
+}
+
+.calculate-button {
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
+.calculate-table-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 610px;
+  /* aspect-ratio: 1;
+
+  background-color: var(--color-dark);
+  border-radius: 50%; */
+}
+
+.calculate-table-wrapper::before {
+  content: '';
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-dark);
+  border-radius: 50%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.calculate-table {
+  position: relative;
+  border-collapse: collapse;
+}
+
+.calculate-table :is(th, td) {
+  padding-right: 30px;
+
+  @media (max-width: 1024px) {
+    padding-right: 10px;
+  }
+}
+
+.calculate-table :is(th, td):not(:first-child) {
+  padding-left: 30px;
+
+  @media (max-width: 1024px) {
+    padding-left: 10px;
+  }
+}
+
+.calculate-table :is(th, td):not(:last-child) {
+  border-right: 1px solid var(--color-light-gray);
+}
+
+.calculate-table tbody td {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.calculate-table tbody tr:last-child td:first-child {
+  position: relative;
+}
+
+.calculate-table tbody tr:last-child td:first-child::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1px;
+  background-color: var(--color-light-gray);
+}
+
+.calculate-table th {
+  padding-block: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--color-light);
+
+  @media (max-width: 1024px) {
+    padding-block: 10px;
+  }
+}
+
+.calculate-table td {
+  padding-block: 14px;
+
+  @media (max-width: 1024px) {
+    padding-block: 10px;
+  }
+}
+
+.calculate-table tfoot {
+  color: var(--color-light);
+}
+
+.calculate-table tfoot td {
+  padding-top: 33px;
+  padding-bottom: 0;
+
+  @media (max-width: 1024px) {
+    padding-top: 10px;
   }
 }
